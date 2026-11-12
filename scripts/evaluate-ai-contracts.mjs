@@ -1,0 +1,14 @@
+import { mkdir,writeFile } from 'node:fs/promises';
+import path from 'node:path';
+await import('../tests/register.mjs');
+const { evaluateAiReleaseCorpus }=await import('./lib/ai-release-evaluation.ts');
+const report=await evaluateAiReleaseCorpus();
+const destination=path.resolve(process.argv[2]??'.local/evidence/audit-2026-10-25/ai-evaluation/local-contracts.json');
+const workspace=path.resolve('.');
+if(!destination.startsWith(workspace+path.sep)||path.extname(destination)!=='.json')throw new Error('Evaluation output must be a JSON file inside this workspace.');
+await mkdir(path.dirname(destination),{recursive:true});
+await writeFile(destination,JSON.stringify(report,null,2)+'\n');
+console.log(`AI local contracts: ${report.passed}/${report.total} passed; ${report.failed} failed. No provider network calls or durable memory writes.`);
+console.log('Live provider quality, semantic accuracy, operator review and deployment remain separate gates.');
+for(const test of report.cases.filter(test=>test.status==='failed'))console.error(`${test.id}: ${test.failure}`);
+if(report.failed)process.exitCode=1;

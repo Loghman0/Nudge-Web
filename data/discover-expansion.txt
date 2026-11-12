@@ -1,0 +1,49 @@
+# Six additional topics. Format matches discover-trees.txt: header plus root/a/b/aa/ab/ba/bb.
+gaming|hobbies|game
+What makes a game session satisfying for you?|Work toward a clear objective|Explore without a fixed plan
+When pursuing a game objective, what do you enjoy most?|Improve a strategy|Build something over time
+When exploring a game, what draws you onward?|Discover unfamiliar places|Try unexpected interactions
+For improving a strategy, what feels rewarding?|Experiment and learn from attempts|Study the rules before trying
+For a long game project, what keeps you interested?|Visible progress each session|Freedom to change the design
+While discovering a game world, what would you prefer?|Explore at my own pace|Share discoveries with friends
+When testing game interactions, what sounds fun?|Solve a puzzle within the rules|Make up a personal challenge
+outdoors|hobbies|outdoor
+For time outdoors, what would you enjoy more?|Follow a familiar route|Explore a new place
+On a familiar outdoor route, what makes it enjoyable?|Notice small seasonal changes|Keep a comfortable steady rhythm
+When exploring somewhere new outdoors, what helps you enjoy it?|A clear route planned in advance|A short flexible outing
+For noticing seasonal changes, what would you bring?|A camera or sketchbook|Only time to look around
+For a comfortable outdoor rhythm, what would you choose?|A quiet solo outing|Someone who enjoys the same pace
+For planning a new route, what would you prefer?|Check the terrain and conditions|Start with a well-described short route
+For a flexible outdoor outing, what would you prioritise?|Time to stop and observe|A few places close together
+reading|movies|reading
+What draws you to your next book?|A world to become immersed in|An idea I want to understand
+For an immersive book, what holds your attention?|Characters with inner depth|A setting full of discoveries
+When reading about an idea, what helps you engage?|Concrete examples and stories|A clear structured argument
+With complex characters, what do you enjoy?|Gradual changes in relationships|A surprising personal perspective
+For a richly imagined setting, what appeals most?|Everyday details of its world|A large unfolding mystery
+When examples explain an idea, what do you prefer?|Follow one case in depth|Compare several different cases
+For a structured argument, what would you do?|Take notes as I read|Discuss it after finishing
+making|hobbies|craft
+For a hands-on project, what sounds rewarding?|Repair something I already own|Make something new
+When repairing something, how would you begin?|Understand why it stopped working|Follow a trusted repair guide
+For making something new, what inspires you?|A practical need|An interesting material
+When understanding a fault, what helps you?|A diagram of the parts|A careful step-by-step inspection
+With a repair guide, what would you prefer?|Clear written instructions|A close-up demonstration
+For a practical project, what matters most?|A reliable simple result|A design tailored to my routine
+When exploring a material, how would you start?|Make a small sample|Adapt a familiar technique
+community|relationships|community
+How would you like to contribute to a community?|Help with a practical task|Share a skill I know
+For a practical community task, what suits you?|A regular small commitment|An occasional focused event
+When sharing a skill, what feels comfortable?|Help one person at a time|Join a small learning group
+For a regular commitment, what would help?|A predictable role|A team I get to know
+For an occasional event, what draws you in?|A clear useful outcome|The chance to meet local people
+For helping someone learn, what do you enjoy?|Show a worked example|Help them work through a question
+In a community learning group, what appeals most?|Exchange different experiences|Make something useful together
+sports|health|sport
+For a recreational sport, what would you enjoy most?|Practise a skill on my own|Play with other people
+When practising a sport skill, what keeps it enjoyable?|Track small improvements|Vary the challenges I try
+When playing sport with others, what atmosphere suits you?|Friendly cooperation|A close but respectful contest
+For tracking a skill, what would you prefer?|One simple personal target|Feedback on my technique
+For varied sport challenges, what sounds fun?|Try a different drill|Adapt a familiar game
+In cooperative play, what feels rewarding?|Include people of different abilities|Build a familiar team rhythm
+In a friendly contest, what matters most?|A fair well-matched game|Learning something from the other player

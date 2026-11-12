@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Preserve the existing interface defaults after the v4 toolchain update. */
+@layer base {
+  *, ::before, ::after, ::backdrop, ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Shared Hindsight palette across public, account and authenticated pages. */
+:root {
+  --surface:237 242 247;--surface-raised:249 251 253;--surface-sunken:225 234 244;
+  --ink:37 51 72;--ink-muted:83 100 121;--ink-faint:83 100 121;--line:190 203 218;
+  --accent:53 93 185;--accent-deep:53 93 185;--accent-soft:225 234 244;
+  --sage:53 93 185;--sage-deep:53 93 185;--sage-soft:225 234 244;--blush:225 234 244;
+  --hero:53 93 185;--on-hero:249 251 253;
+}
+
+.dark {
+  --surface:21 34 52;--surface-raised:32 49 71;--surface-sunken:40 60 84;
+  --ink:233 238 245;--ink-muted:186 201 219;--ink-faint:186 201 219;--line:74 94 118;
+  --accent:166 191 240;--accent-deep:166 191 240;--accent-soft:40 60 84;
+  --sage:166 191 240;--sage-deep:166 191 240;--sage-soft:40 60 84;--blush:40 60 84;
+  --hero:40 60 84;--on-hero:233 238 245;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+  font-family:var(--font-workspace),var(--font-inter),system-ui,sans-serif;
+  line-height:1.6;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-display {
+  font-family:var(--font-workspace),var(--font-inter),system-ui,sans-serif;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--accent));
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.nudge-logo { display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;flex-shrink:0; }
+.nudge-brand { display:inline-flex;align-items:center;gap:10px;line-height:1; }
+.nudge-brand img { display:block;flex-shrink:0;width:36px;height:36px; }
+.nudge-brand>span { font-family:var(--font-workspace),var(--font-hindsight),var(--font-inter),sans-serif;font-size:26px;font-style:normal;font-weight:700;letter-spacing:-.045em; }
+textarea,select { font-size:1rem; }
+
+/* Wavy divider between stacked sections. Color = the section BELOW the wave. */
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin-bottom: -1px;
+}
+
+/* Sticky-note folded corner: a numbered dog-ear tab on process cards. */
+.folded-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-bottom-left-radius: 1.25rem;
+  background: rgb(var(--surface) / 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient glow blobs used on the landing hero and dashboard header. */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* Floating particle drift animation */
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-110vh) translateX(var(--drift, 30px)) rotate(var(--spin, 180deg)); opacity: 0; }
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(2deg); }
+  66%       { transform: translateY(-4px) rotate(-1.5deg); }
+}
+
+@keyframes shimmer-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.06); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%       { opacity: 1;  transform: scale(1); }
+}
+
+@keyframes gentle-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes breath {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--accent) / 0); }
+  50%       { box-shadow: 0 0 0 8px rgb(var(--accent) / 0.12); }
+}
+
+.cta-breathe {
+  animation: breath 3s ease-in-out infinite;
+}
+
+/* Sticky-note hover wiggle */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(0.8deg); }
+  75%       { transform: rotate(-0.8deg); }
+}
+
+.sticky-note:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Paper texture shimmer on cards */
+@keyframes paper-sheen {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ---- Micro-animations (CSS-only, zero JS cost; killed by the global
+        reduced-motion rule above) ---------------------------------------- */
+
+/* Result cards rising in, one after another via inline animation-delay. */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Score bars growing to width on mount. */
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.animate-grow-x {
+  transform-origin: left;
+  animation: grow-x 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* One confident pulse when a choice registers. */
+@keyframes pop-once {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+.animate-pop {
+  animation: pop-once 0.35s ease-out;
+}
+
+/* Milestone toast: slide up, hold, fade — self-dismissing. */
+@keyframes toast-in-out {
+  0% { opacity: 0; transform: translateY(12px); }
+  8%, 88% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+.animate-toast {
+  animation: toast-in-out 4.5s ease-in-out both;
+}
+
+/* Anchored history cards land below the sticky mobile chrome. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* The mobile bottom nav must clear the iOS home indicator. */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Reduced motion must not mean missed information: the global rule above
+   would end the toast animation instantly and hide the milestone before it
+   was ever readable. Re-time it as a motion-free hold + fade. */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes toast-hold {
+    0%, 96% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .animate-toast {
+    animation: toast-hold 4.5s linear both !important;
+  }
+}

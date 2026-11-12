@@ -1,0 +1,264 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nudge@0.1.0 verify
+> npm run typecheck && npm run test && npm run build
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nudge@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nudge@0.1.0 test
+> node --import ./tests/register.mjs --test --test-reporter=spec tests/*.test.ts
+
+(node:59) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ session cookie persistence
+  ✔ requires a session for password changes and refreshes recovery-session cookies (93.067606ms)
+  ✔ retains refreshed cookies on authenticated login redirects and the next page request (4.571447ms)
+  ✔ propagates cleared expired cookies on protected-route redirects (7.222504ms)
+  ✔ attaches exchanged OAuth sessions to redirects with persistent root-scoped cookies (8.680781ms)
+✔ session cookie persistence (115.997048ms)
+✔ preserves a shared-circle destination without accepting external return URLs (6.485981ms)
+✔ allows login and clears cookies for a deleted identity even while its claims are valid (2.683261ms)
+(node:60) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ rejects public/user check-in requests before invoking the service-role job (64.414549ms)
+▶ database privacy boundaries
+  ✔ restricts global jobs and internal/trigger functions to trusted roles (9.069393ms)
+  ✔ rejects foreign decision provenance even through a definer RPC (12.947051ms)
+  ✔ prevents direct edits of canonical graph, derived profile counters and achievements (8.234659ms)
+  ✔ keeps a forgotten preference suppressed through later evidence and decay (23.571677ms)
+  ✔ erases the canonical graph and rejects pre-reset asynchronous writes (27.671289ms)
+✔ database privacy boundaries (3799.019213ms)
+▶ atomic learning
+  ✔ commits a choice and learns once on identical retry (26.280357ms)
+  ✔ saves a reflection and its evidence once, and rejects conflicting retries (25.815092ms)
+  ✔ neutral feedback does not append a positive reflection signal (18.310652ms)
+  ✔ rolls back a reflection if its learning write fails (13.876689ms)
+  ✔ confirms an avoidance without reversing its polarity, once per check (12.309189ms)
+  ✔ timestamps a post-reset choice after the reset even in an older transaction (9.324261ms)
+  ✔ records a question answer once without asserting dislike of the other side (8.816523ms)
+  ✔ validates onboarding keys on the server and rolls back an invalid batch (9.560668ms)
+✔ atomic learning (124.943647ms)
+▶ circle vote privacy
+  ✔ returns aggregate totals while hiding other voters from members and outsiders (21.527561ms)
+  ✔ blocks foreign node links even under service-level table access (3.440734ms)
+✔ circle vote privacy (25.186773ms)
+✔ upgrades existing learned nodes and forgotten state without losing evidence (1684.800736ms)
+▶ extractNamedOptions
+  ✔ parses a plain either/or (2.243057ms)
+  ✔ strips the question preamble (0.366148ms)
+  ✔ handles vs and comma lists (4.34441ms)
+  ✔ returns nothing when no alternatives are named (0.22519ms)
+✔ extractNamedOptions (13.846793ms)
+▶ rankCandidates
+  ✔ prefers the option matching a strong liked preference (0.726432ms)
+  ✔ keeps every score inside [0, 1] (0.294748ms)
+  ✔ is deterministic for identical inputs (0.263908ms)
+  ✔ responds to injected weights (configurable scoring) (6.486058ms)
+  ✔ default weights are normalized to 1 (0.189254ms)
+✔ rankCandidates (8.493274ms)
+▶ reinforcementDelta
+  ✔ is positive for a great outcome (0.234738ms)
+  ✔ is negative for a regretted outcome (2.449474ms)
+  ✔ stays clamped to ±0.2 (0.164808ms)
+✔ reinforcementDelta (3.07432ms)
+▶ guards and confidence
+  ✔ flags options the user regretted before (0.355409ms)
+  ✔ reports low confidence for near ties (0.180566ms)
+✔ guards and confidence (0.771013ms)
+▶ Discover question trees and quick checks
+  ✔ seeds 126 distinct questions, 108 connections and 18 complete two-level trees (8.948407ms)
+  ✔ saves the finance question from the reported failure and advances (39.337505ms)
+  ✔ unlocks only the chosen branch, follows through two levels, and links chosen beliefs (99.929422ms)
+  ✔ skips without learning or unlocking a branch and respects topic boundaries (14.139012ms)
+  ✔ confirms dislikes, neutralizes outdated assumptions and retries without duplicate evidence (56.588434ms)
+  ✔ dismisses an already neutral or inactive check instead of stranding it (10.202833ms)
+  ✔ enqueues due checks on page visits, deduplicates and never touches another owner (16.21657ms)
+✔ Discover question trees and quick checks (3647.180488ms)
+▶ Discover interactions
+  ✔ keeps advancing after opting in, including skips, and pauses only on request (470.466773ms)
+  ✔ keeps a failed answer visible and blocks duplicate clicks before rerender (34.136099ms)
+  ✔ keeps failed quick checks, describes dislikes accurately and advances the next check after success (63.841096ms)
+  ✔ waits for successful insight confirmation and keeps errors retryable (51.627442ms)
+✔ Discover interactions (621.805156ms)
+▶ feature UI rendering contracts
+  ✔ copies all eight options and restores the title and context without writing a new decision (32.679024ms)
+  ✔ renders a resumed comparison with refresh and persisted choice controls (5.579335ms)
+  ✔ makes correction, evidence and individual extracted-memory editing available (4.84654ms)
+  ✔ renders explicit reminder timing and timezone labeling (6.063456ms)
+✔ feature UI rendering contracts (54.075698ms)
+▶ memory inspection and corrections
+  ✔ searches beyond the initial page without exposing another user's beliefs (55.692909ms)
+  ✔ changes a belief immediately, preserves evidence, and resists subsequent inferred reversal (40.706152ms)
+  ✔ neutralizes an outdated manual belief without inferring its opposite (9.552508ms)
+  ✔ supports neutral correction and canonical forgetting without leaving a ranking projection (21.433733ms)
+  ✔ does not ask impossible still-true questions for a neutral belief (17.239662ms)
+  ✔ edits/deletes only the caller's extracted memory and invalidates old extraction jobs (21.764335ms)
+✔ memory inspection and corrections (3786.660547ms)
+▶ persisted comparisons
+  ✔ creates all eight options atomically and allows an owner to restore all saved inputs (13.835899ms)
+  ✔ rejects an invalid option list without leaving an empty comparison (5.021206ms)
+  ✔ adds an option and saves all ranks together, with stale-tab and ownership protection (29.222309ms)
+  ✔ rejects scoring from an older memory generation (11.434505ms)
+✔ persisted comparisons (60.220025ms)
+▶ outcome check-ins
+  ✔ defaults to 24 hours, supports future custom time, and deduplicates a scheduled prompt (34.878762ms)
+  ✔ snoozes once, turns reminders off, and closes them when reflected (43.588166ms)
+  ✔ disables retained-history reminders on reset and allows explicit rescheduling (22.201715ms)
+✔ outcome check-ins (100.902294ms)
+▶ toKeySegment
+  ✔ normalizes labels into valid key segments (5.37414ms)
+✔ toKeySegment (7.863778ms)
+▶ categorySlugForKey
+  ✔ maps preference namespaces to the ten score categories (0.456394ms)
+✔ categorySlugForKey (0.617142ms)
+▶ computeKnowledgeScore
+  ✔ always returns all ten categories (4.748823ms)
+  ✔ scores a well-known category higher than an unknown one (0.974647ms)
+  ✔ rewards more evidence with a higher score (0.412114ms)
+  ✔ fades stale beliefs and counts them (0.475904ms)
+  ✔ ignores forgotten nodes and keeps scores in range (0.435015ms)
+✔ computeKnowledgeScore (10.946694ms)
+▶ loadEngineConfig
+  ✔ prefers the category row over default and normalizes weights (0.743392ms)
+  ✔ falls back to the default row when no category row exists (0.379948ms)
+  ✔ falls back to compiled defaults on malformed weights or db errors (0.961899ms)
+✔ loadEngineConfig (2.389814ms)
+▶ public sample evidence
+  ✔ allows positive and negative outcomes to change the recommendation without a fabricated percentage (0.929297ms)
+  ✔ does not invent relevant evidence for unfamiliar options or favor arbitrary ties (1.126607ms)
+  ✔ connects every public node to the same sample memory with valid endpoints (0.430625ms)
+✔ public sample evidence (3.845621ms)
+▶ launch protection regressions
+  ✔ keeps missing AI consent and failed quota checks off (0.990663ms)
+  ✔ rejects push URLs outside supported browser services and malicious credentials/ports (0.621985ms)
+✔ launch protection regressions (4.400362ms)
+▶ NVIDIA model routing and validation
+  ✔ routes parsing, extraction, explanations and summaries to the four configured models (76.737428ms)
+  ✔ falls back on provider errors, empty responses and malformed structured output (16.346925ms)
+  ✔ bounds attempts and returns a safe error without keys or response bodies (79.926619ms)
+  ✔ supports shared keys and explicit model slots, and stays optional without keys (0.616001ms)
+  ✔ validates and caps extracted data before it can reach memory writes (24.015414ms)
+✔ NVIDIA model routing and validation (203.51123ms)
+▶ public launch privacy and atomic circles
+  ✔ defaults AI off, records versioned terms, validates age and prevents direct consent forgery (24.784994ms)
+  ✔ enabling/disabling AI invalidates stale jobs and enforces durable quotas across callers (35.540372ms)
+  ✔ creates circle and membership together and checks poll creation transactionally (20.784265ms)
+  ✔ joins, rotates invitations, rejects stale codes and disallows direct structural writes (11.017181ms)
+  ✔ votes safely, exposes only aggregates/own vote, removes departing votes, and rejects closed votes (22.065294ms)
+  ✔ does not let onboarding questions or skipped Discover answers finish the daily target (47.351762ms)
+  ✔ removes all user-owned live records including private quotas when the auth account is deleted (6.90241ms)
+✔ public launch privacy and atomic circles (3661.630799ms)
+✔ existing-update SQL is idempotent on an updated database and preserves answers (1702.264705ms)
+✔ upgrades the current 00004 installation once while preserving its question bank and memory (1666.770231ms)
+▶ checkRateLimit
+  ✔ allows up to the limit and then blocks (1.280862ms)
+  ✔ isolates users and actions from each other (0.226983ms)
+  ✔ frees capacity once the window has passed (61.326694ms)
+✔ checkRateLimit (65.583816ms)
+▶ recommendation regressions
+  ✔ keeps learned preferences in their category including legacy graph metadata (2.41256ms)
+  ✔ does not bias an option upward for a neutral preference (0.558571ms)
+  ✔ preserves negation and meaningful variants (1.795611ms)
+  ✔ preserves non-English text and keeps distinct Unicode key identities (1.526489ms)
+  ✔ can replay time-dependent scores with an explicit scoring timestamp (0.751161ms)
+  ✔ uses negative counterfactual feedback consistently (0.851208ms)
+  ✔ parses more than two alternatives and normalizes to-one joins (5.312684ms)
+✔ recommendation regressions (25.71137ms)
+▶ export pagination
+  ✔ exports beyond a smaller deployment row cap without losing rows (4.75842ms)
+  ✔ rejects a failed later page instead of returning a partial export (0.857903ms)
+✔ export pagination (5.975528ms)
+✔ does not clear hourly limits when a short-window sweep runs (0.475991ms)
+▶ private cache protection
+  ✔ purges old Nudge caches without removing unrelated application caches (12.614442ms)
+  ✔ never intercepts/caches exports, RSC or private API responses (4.616408ms)
+  ✔ returns only a neutral offline document for private page navigation (1.410229ms)
+✔ private cache protection (20.184133ms)
+ℹ tests 110
+ℹ suites 26
+ℹ pass 110
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9323.962948
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nudge@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.27
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · staleTimes
+
+   Creating an optimized production build ...
+(node:490) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/6b7c2554ab3c/nudge/tailwind.config.ts?id=1791902773566 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/6b7c2554ab3c/nudge/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ Compiled successfully in 6.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/29) ...
+   Generating static pages (7/29) 
+   Generating static pages (14/29) 
+   Generating static pages (21/29) 
+ ✓ Generating static pages (29/29)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    93.1 kB         201 kB
+├ ○ /_not-found                            146 B         103 kB
+├ ● /[policy]                              146 B         103 kB
+├   ├ /privacy
+├   ├ /terms
+├   ├ /cookies
+├   └ [+3 more paths]
+├ ƒ /analytics                           2.26 kB         113 kB
+├ ƒ /api/export                            146 B         103 kB
+├ ƒ /ask                                  8.1 kB         122 kB
+├ ƒ /auth/callback                         146 B         103 kB
+├ ƒ /consent                             1.41 kB         116 kB
+├ ƒ /dashboard                           1.69 kB         147 kB
+├ ƒ /discover                            4.51 kB         119 kB
+├ ƒ /groups                              1.49 kB         107 kB
+├ ƒ /groups/[id]                         1.49 kB         107 kB
+├ ƒ /history                             3.38 kB         118 kB
+├ ○ /login                                3.3 kB         118 kB
+├ ○ /manifest.webmanifest                  146 B         103 kB
+├ ƒ /notifications                       2.44 kB         108 kB
+├ ƒ /onboarding                          5.21 kB         156 kB
+├ ○ /opengraph-image                       146 B         103 kB
+├ ƒ /profile                             6.93 kB         121 kB
+├ ○ /reset-password                      1.41 kB         116 kB
+├ ○ /robots.txt                            146 B         103 kB
+├ ○ /signup                               3.2 kB         118 kB
+├ ○ /sitemap.xml                           146 B         103 kB
+└ ○ /update-password                     1.34 kB         112 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/255-b3f45ce44511b731.js       46.2 kB
+  ├ chunks/4bd1b696-409494caf8c83275.js  54.2 kB
+  └ other shared chunks (total)          1.94 kB
+
+
+ƒ Middleware                             90.4 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+
+Final landing/public browser regression: 3 passed, 2 skipped (authenticated/deletion fixtures not supplied).
+Dependency audit: zero known advisories at recorded check.
+Lighthouse mobile/desktop LCP: 2.72s / 0.43s; CLS 0 / 0. Mobile target deviation: +0.22s.
+Local Event Timing max: 48ms; field INP unmeasured.
+Public launch configuration pending; see release-check evidence and LAUNCH.md.
+SQL unchanged; prior app-wide verification retained in evidence/landing/previous-release-verification.txt and RELEASE-TESTING.md.

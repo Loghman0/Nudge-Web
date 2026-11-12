@@ -1,0 +1,1 @@
+Stop npm run dev with Ctrl+C. Extract this patch into your working Hindsight project folder (the one containing package.json), overwrite matching files, then run npm run dev. See DASHBOARD-UPDATE.md for full instructions. No dependency or SQL changes. Keep .env.local.

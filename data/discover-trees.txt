@@ -1,0 +1,145 @@
+# topic|knowledge category|key namespace; then seven questions: root, a, b, aa, ab, ba, bb
+food|food|food
+When dinner feels repetitive, what would improve it most?|Try a new cuisine|Perfect a familiar favourite
+For a new cuisine, how would you like to start?|Follow a simple recipe|Taste it at a restaurant
+When improving a familiar meal, what matters more?|Better flavour|Less preparation
+A new recipe has an unfamiliar ingredient. What helps you try it?|An easy substitution|A small trial batch
+What makes a restaurant food adventure enjoyable?|A trusted recommendation|Choosing something on impulse
+What would you change first in your favourite meal?|Seasoning and texture|Ingredient quality
+For an easier familiar meal, which shortcut suits you?|Prepare components ahead|Cook everything in one pan
+movies|movies|watch
+You have an evening free for a film. What are you looking for?|A comforting story|Something that surprises me
+What makes a comforting film worth rewatching?|Characters I care about|A familiar atmosphere
+What kind of surprise makes a film memorable?|An unexpected idea|A clever plot turn
+For character-driven films, what holds your attention?|Honest conversation|People changing over time
+Which familiar film atmosphere helps you unwind?|Gentle humour|A warm sense of place
+After a thought-provoking film, what do you enjoy?|Discussing the ideas|Reflecting on my own
+With a twisty film, what feels most satisfying?|Working out the clues|Being surprised at the end
+music|movies|music
+When you put on music, what do you usually want it to do?|Match how I feel|Change my energy
+What draws you into music that matches your mood?|The words|The sound and texture
+To change your energy, which kind of listening helps?|An upbeat playlist|A calm instrumental track
+With meaningful lyrics, what connects most?|A story close to my life|A new perspective
+For mood-matching sound, what do you reach for?|Acoustic and intimate|Layered and atmospheric
+For an energy boost, how do you choose tracks?|Familiar favourites|Fresh discoveries
+For calmer listening, what helps you settle?|One album without interruptions|A gentle mix of different artists
+travel|travel|travel
+On a short trip, what would make the time feel well spent?|Explore a place deeply|See several different places
+To explore one place deeply, what would you prioritise?|Local everyday life|Its history and landmarks
+For a trip with several stops, what matters most?|Smooth transport|Room for spontaneous detours
+How would you get closer to local everyday life?|Visit neighbourhood markets|Join a small local activity
+At a historic site, how would you like to learn?|A guide who tells stories|Explore at my own pace
+For easier travel between stops, what would you choose?|A direct route|A scenic route with extra time
+When making a spontaneous detour, what appeals most?|An unexpected natural spot|A town I know little about
+shopping|shopping|shopping
+For something you will use often, where do you put your effort?|Research before buying|Try it in person
+What kind of research helps you decide?|Long-term user experiences|A clear feature comparison
+When trying a product in person, what matters most?|How comfortable it feels|How easily it fits my routine
+What convinces you in long-term product reviews?|Reliable use over time|Helpful support when something breaks
+When features compete, what is your priority?|The few functions I need|Flexibility for future needs
+When judging comfort, what would you rather do?|Spend more time testing|Use a familiar brand as a starting point
+What makes a product fit your routine?|It works with what I already own|It replaces several separate things
+health|health|fitness
+What would make movement easier to fit into an ordinary week?|A regular planned session|Small bursts throughout the day
+For planned movement, what helps you return?|A class at a fixed time|A flexible solo routine
+For small bursts of movement, what sounds practical?|Walk during an existing break|Move between tasks at home
+What makes a class feel inviting?|A supportive instructor|A friend joining me
+For a solo routine, what keeps it manageable?|Repeat a simple sequence|Vary activities by how I feel
+What would improve a regular walking break?|A pleasant outdoor route|A short errand with a purpose
+For movement at home, what is easier to sustain?|A reminder at a regular time|A cue from finishing another task
+career|career|work
+In a good working week, what would you like more of?|Deep uninterrupted work|Useful collaboration
+What helps you protect focused work?|A predictable focus block|Control over where I work
+What makes collaboration useful for you?|Thinking through ideas together|Clear ownership and hand-offs
+For a focus block, what would you change first?|Reduce notifications|Agree on quieter meeting hours
+Which working setting helps you concentrate?|A quiet private space|A low-key shared workspace
+When discussing ideas, what helps you contribute?|Time to prepare my thoughts|A lively conversation in the moment
+For a hand-off, which form of clarity helps most?|A concise written brief|A short live walkthrough
+relationships|relationships|social
+After a busy week, what kind of connection feels best?|Time with one close person|A small group gathering
+During one-to-one time, what would you enjoy?|An unhurried conversation|Doing an activity together
+For a small gathering, what makes it comfortable?|A plan everyone knows|A relaxed open-ended evening
+For a meaningful conversation, what helps you open up?|A quiet private setting|A shared walk
+Which shared activity makes connection easier?|Cook or make something|Go somewhere new together
+When arranging a group plan, what matters more?|Give people plenty of notice|Keep the plan simple to join
+In an open-ended evening, what feels welcoming?|Someone gently includes everyone|People can dip in and out
+finance|finance|finance
+For everyday spending, which habit would feel easier to maintain?|Set a simple monthly limit|Check spending a little at a time
+What would make a monthly limit useful?|Separate essential and optional spending|One flexible overall target
+For small spending check-ins, what would you choose?|A weekly review|A quick check before bigger purchases
+Within optional spending, what would you rather protect?|Experiences with people|Things I use often
+When an overall target needs changing, what helps?|A buffer for unexpected costs|Adjust it to that month's plans
+During a weekly spending review, what would be useful?|See a few clear categories|See only the total and trend
+Before a bigger purchase, what helps you pause?|Wait a day before deciding|Compare it with another priority
+hobbies|hobbies|hobby
+What would make a hobby feel worthwhile right now?|Build a skill over time|Enjoy it without a goal
+For a hobby skill, what motivates you?|A small project I can finish|A clear next technique to learn
+For a hobby without a goal, what matters most?|A restful familiar activity|Playful experimentation
+For a small project, what finish line feels satisfying?|Make something useful|Make something I can share
+To learn a technique, what would you prefer?|A step-by-step demonstration|Try it and work out the details
+For a restful hobby, what helps you settle?|A familiar rhythm|An activity away from screens
+For playful experimentation, what makes it easier?|Low-cost materials|Company that enjoys trying things
+home|lifestyle|home
+What would make your home feel better on an ordinary day?|Less visual clutter|More personal warmth
+When reducing clutter, what would help first?|Fewer things on visible surfaces|A clear place for everyday items
+For more personal warmth, what appeals?|Lighting and textures|Objects with a story
+With visible surfaces, which approach feels manageable?|Clear one area at a time|Keep only the essentials out
+For everyday storage, what matters more?|Everything easy to reach|Everything tucked out of sight
+Which change in lighting would you enjoy?|Soft evening lamps|More natural daylight
+For objects with a story, what would you display?|Memories from people and places|Things I made myself
+learning|career|learning
+When learning something new, how would you like to begin?|Understand the main idea|Try a small real task
+For understanding a new idea, what helps most?|A clear example|A visual explanation
+For a first real task, what feels useful?|A guided exercise|A problem from my own life
+With an example, what helps the idea stick?|Compare two different cases|Explain it back in my own words
+With a visual explanation, what would you choose?|A simple diagram|A demonstration in motion
+In a guided exercise, what support helps?|Feedback after each step|A complete worked solution afterward
+For a problem from your life, what keeps you going?|An immediately useful result|The chance to explore freely
+digital|shopping|tech
+What would improve your everyday use of technology?|Fewer distractions|Less friction in common tasks
+For fewer distractions, where would you start?|Control notifications|Create time away from feeds
+To simplify common tasks, what would help?|Use fewer apps|Connect tools I already use
+For notifications, which rule feels practical?|Only people can interrupt|Check everything at chosen times
+For time away from feeds, what helps more?|Keep the phone out of reach|Replace scrolling with another activity
+When choosing fewer apps, what matters most?|A simple tool that does the basics|One tool covering several needs
+When connecting tools, what would you prioritise?|Saving repetitive effort|Keeping control over shared data
+values|lifestyle|values
+When two good opportunities compete, what would you protect first?|Time for people who matter|Room for personal growth
+When protecting time for people, what matters most?|Be reliable in everyday life|Make room for important moments
+For personal growth, which opportunity appeals?|Deepen an existing strength|Explore an unfamiliar direction
+For everyday reliability, what would you prefer?|A few commitments I can keep|Flexibility to respond when needed
+For important moments, what helps you show up?|Plan ahead around them|Leave room in my schedule
+To deepen a strength, what feels rewarding?|Become more capable independently|Use it to help someone else
+To explore a new direction, what would help?|A low-stakes experiment|Encouragement from someone I trust
+time|lifestyle|rhythm
+What would make a busy day feel more manageable?|A clear plan at the start|Space to adjust as it unfolds
+For a clear daily plan, what helps you?|Choose three priorities|Give tasks specific time blocks
+When adjusting through the day, what keeps you grounded?|A short mid-day reset|A clear rule for what can wait
+For three priorities, what would you choose first?|The most meaningful task|The task blocking other things
+For time blocks, how much structure feels useful?|Predictable recurring blocks|A fresh schedule for each day
+At a mid-day reset, what would help?|Review what is still realistic|Take a break before deciding
+When deciding what can wait, what guides you?|The deadline and consequence|My available energy
+creativity|hobbies|creative
+When making something creative, what starts the process for you?|A clear idea to bring to life|Exploring until an idea appears
+With a clear idea, what helps you begin?|A rough outline|A quick first version
+When exploring creatively, what sparks you?|An interesting material or tool|A prompt or constraint
+For a rough outline, what feels useful?|Map the overall shape|Collect a few strong references
+With a first version, what would you rather do?|Finish quickly then revise|Develop one section carefully
+When a material sparks an idea, how do you explore?|Experiment freely with its possibilities|Learn one technique first
+With a creative constraint, what appeals?|A tight time limit|A simple theme to interpret
+sustainability|lifestyle|habit
+For reducing everyday waste, which change seems easier?|Use what I own for longer|Buy fewer disposable items
+To keep something useful longer, what would help?|Simple repair skills|Better care and maintenance
+For fewer disposable items, what would you try?|A reusable item I can carry|A refill option near home
+For simple repairs, how would you learn?|Fix one item with guidance|Attend a practical workshop
+For better maintenance, what works for you?|A small regular routine|Care instructions when I need them
+For a reusable item, what matters most?|Convenience to carry|Easy cleaning after use
+With refills, what would make the habit practical?|Add it to an existing errand|Buy enough to reduce trips
+wellbeing|health|rest
+After an overstimulating day, what helps you recover?|Quiet time on my own|Gentle company
+For quiet recovery, what would feel best?|An activity without screens|Doing very little for a while
+For gentle company, what would you enjoy?|A familiar person nearby|A low-key shared activity
+For screen-free recovery, what helps you unwind?|A short walk outdoors|A small hands-on task
+When doing very little, what makes it easier?|A clear break with no obligations|A comfortable place to rest
+With someone familiar nearby, what feels supportive?|Talking a little about the day|Being together without needing to talk
+For a low-key activity with company, what would you choose?|Prepare an easy meal|Watch something familiar

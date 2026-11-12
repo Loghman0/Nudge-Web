@@ -1,0 +1,423 @@
+[
+  {
+    "id": "rest-break",
+    "version": 1,
+    "familyId": "rest-break",
+    "domain": "rest",
+    "subdomain": "breaks",
+    "prompt": "A busy day gives you 20 minutes back. What sounds best?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "Quiet music"
+      },
+      {
+        "id": "b",
+        "label": "A chat with someone familiar"
+      },
+      {
+        "id": "c",
+        "label": "A tiny hands-on project"
+      },
+      {
+        "id": "d",
+        "label": "A little fresh air"
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true,
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "rest.break.setting",
+        "value": "quiet_music",
+        "statement": "You chose quiet music for a break after a busy day.",
+        "scope": "a short break after a busy day",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "c",
+        "attributeKey": "rest.break.setting",
+        "value": "hands_on",
+        "statement": "You chose a tiny hands-on project for a break.",
+        "scope": "a short break after a busy day",
+        "kind": "preference",
+        "strength": "direct"
+      }
+    ]
+  },
+  {
+    "id": "time-free-day",
+    "version": 1,
+    "familyId": "time-free-day",
+    "domain": "time",
+    "subdomain": "planning",
+    "prompt": "Tomorrow is unexpectedly free. Pick your kind of plan.",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "One thing to look forward to, rest open"
+      },
+      {
+        "id": "b",
+        "label": "A few things lined up"
+      },
+      {
+        "id": "c",
+        "label": "Decide when I wake up"
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true,
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "time.free_day.plan",
+        "value": "one_anchor",
+        "statement": "You chose one planned activity with room around it.",
+        "scope": "an unexpectedly free day",
+        "kind": "preference",
+        "strength": "direct",
+        "criterion": {
+          "label": "Flexibility",
+          "decisionDomains": [
+            "travel",
+            "lifestyle",
+            "hobbies"
+          ]
+        }
+      },
+      {
+        "optionId": "b",
+        "attributeKey": "time.free_day.plan",
+        "value": "several_plans",
+        "statement": "You chose a few things lined up for a free day.",
+        "scope": "an unexpectedly free day",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "c",
+        "attributeKey": "time.free_day.plan",
+        "value": "spontaneous",
+        "statement": "You chose to decide when the free day starts.",
+        "scope": "an unexpectedly free day",
+        "kind": "preference",
+        "strength": "direct",
+        "criterion": {
+          "label": "Flexibility",
+          "decisionDomains": [
+            "travel",
+            "lifestyle",
+            "hobbies"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "learning-puzzle",
+    "version": 1,
+    "familyId": "learning-puzzle",
+    "domain": "learning",
+    "subdomain": "starting",
+    "prompt": "You find a puzzle box with no obvious opening. Your first move?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "Try one small thing"
+      },
+      {
+        "id": "b",
+        "label": "Look for an example"
+      },
+      {
+        "id": "c",
+        "label": "Ask for a hint"
+      },
+      {
+        "id": "d",
+        "label": "Study it for a moment"
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true,
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "learning.starting.method",
+        "value": "small_experiment",
+        "statement": "You chose a small first attempt with the unfamiliar puzzle.",
+        "scope": "an unfamiliar low-stakes puzzle",
+        "kind": "preference",
+        "strength": "direct",
+        "criterion": {
+          "label": "Chance to try a small example",
+          "decisionDomains": [
+            "learning",
+            "hobbies"
+          ]
+        }
+      },
+      {
+        "optionId": "b",
+        "attributeKey": "learning.starting.method",
+        "value": "example",
+        "statement": "You chose to look for an example before opening the puzzle.",
+        "scope": "an unfamiliar low-stakes puzzle",
+        "kind": "preference",
+        "strength": "direct",
+        "criterion": {
+          "label": "Worked examples",
+          "decisionDomains": [
+            "learning"
+          ]
+        }
+      },
+      {
+        "optionId": "c",
+        "attributeKey": "learning.starting.method",
+        "value": "hint",
+        "statement": "You chose to ask for a hint with an unfamiliar puzzle.",
+        "scope": "an unfamiliar low-stakes puzzle",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "d",
+        "attributeKey": "learning.starting.method",
+        "value": "study",
+        "statement": "You chose to study the puzzle before trying it.",
+        "scope": "an unfamiliar low-stakes puzzle",
+        "kind": "preference",
+        "strength": "direct"
+      }
+    ]
+  },
+  {
+    "id": "food-snack",
+    "version": 1,
+    "familyId": "food-snack",
+    "domain": "food",
+    "subdomain": "novelty",
+    "prompt": "A café offers two equally appealing snacks. Which gets your vote?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "My favorite, made really well"
+      },
+      {
+        "id": "b",
+        "label": "A combination I have never tried"
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "both",
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true,
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "food.snack.familiarity",
+        "value": "familiar",
+        "statement": "You chose a familiar favorite for the café snack.",
+        "scope": "two equally appealing café snacks",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "b",
+        "attributeKey": "food.snack.familiarity",
+        "value": "new",
+        "statement": "You chose a new combination for the café snack.",
+        "scope": "two equally appealing café snacks",
+        "kind": "preference",
+        "strength": "direct"
+      }
+    ]
+  },
+  {
+    "id": "play-humor",
+    "version": 1,
+    "familyId": "play-humor",
+    "domain": "play",
+    "subdomain": "humor",
+    "prompt": "Which joke is more likely to get you?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "A painfully good pun"
+      },
+      {
+        "id": "b",
+        "label": "A completely absurd situation"
+      }
+    ],
+    "purpose": "playful",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "both",
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true
+  },
+  {
+    "id": "creativity-postcard",
+    "version": 1,
+    "familyId": "creativity-postcard",
+    "domain": "creativity",
+    "subdomain": "starting",
+    "prompt": "You are making a postcard for fun. Where do you start?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "A messy sketch"
+      },
+      {
+        "id": "b",
+        "label": "A color I like"
+      },
+      {
+        "id": "c",
+        "label": "A reference to borrow from"
+      },
+      {
+        "id": "d",
+        "label": "A message to build around"
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 12,
+    "status": "published",
+    "source": "starter",
+    "allowedResponses": [
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 1
+    },
+    "preview": true,
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "creativity.starting.method",
+        "value": "rough_attempt",
+        "statement": "You chose a messy sketch to begin the postcard.",
+        "scope": "starting a playful postcard",
+        "kind": "preference",
+        "strength": "direct",
+        "criterion": {
+          "label": "Room for a rough first attempt",
+          "decisionDomains": [
+            "hobbies",
+            "learning"
+          ]
+        }
+      },
+      {
+        "optionId": "b",
+        "attributeKey": "creativity.starting.method",
+        "value": "color",
+        "statement": "You chose a color as the starting point for the postcard.",
+        "scope": "starting a playful postcard",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "c",
+        "attributeKey": "creativity.starting.method",
+        "value": "reference",
+        "statement": "You chose a reference as the starting point for the postcard.",
+        "scope": "starting a playful postcard",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "d",
+        "attributeKey": "creativity.starting.method",
+        "value": "message",
+        "statement": "You chose a message as the starting point for the postcard.",
+        "scope": "starting a playful postcard",
+        "kind": "preference",
+        "strength": "direct"
+      }
+    ]
+  }
+]
