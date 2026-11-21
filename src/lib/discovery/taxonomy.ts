@@ -18,6 +18,9 @@ export const DISCOVERY_DOMAINS: { id: DiscoveryDomain; label: string; subdomains
   { id: "movement", label: "Movement & comfort", subdomains: ["comfort", "rest", "enjoyment"] },
   { id: "digital", label: "Digital life & attention", subdomains: ["attention", "channels", "privacy", "information"] },
   { id: "future", label: "Future & goals", subdomains: ["goals", "progress", "experiments"] },
+  { id: "home", label: "Home & space", subdomains: ["space", "belongings", "atmosphere"] },
+  { id: "style", label: "Style & expression", subdomains: ["clothing", "expression", "comfort"] },
+  { id: "nature", label: "Nature & outdoors", subdomains: ["outdoors", "seasons", "weather"] },
 ];
 export function discoveryDomain(value: unknown): DiscoveryDomain | null {
   return typeof value === "string" && DISCOVERY_DOMAINS.some(domain => domain.id === value) ? value as DiscoveryDomain : null;

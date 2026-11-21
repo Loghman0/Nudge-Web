@@ -248,6 +248,14 @@ export type Database = {
         created_at: string;
       }, [{ foreignKeyName: "decision_reflections_decision_id_fkey"; columns: ["decision_id"]; isOneToOne: true; referencedRelation: "decisions"; referencedColumns: ["id"] }, FK<"decision_reflections_user_id_fkey", "user_id", "profiles">]>;
 
+      account_exit_reasons: Table<{
+        id: string;
+        user_id: string | null;
+        kind: "pause" | "delete";
+        reasons: string[];
+        created_at: string;
+      }, []>;
+
       notifications: Table<{
         id: string;
         user_id: string;

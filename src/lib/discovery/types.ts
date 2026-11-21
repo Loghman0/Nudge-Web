@@ -1,4 +1,4 @@
-export type DiscoveryDomain = "rest" | "time" | "values" | "relationships" | "work" | "learning" | "money" | "food" | "culture" | "play" | "creativity" | "childhood" | "uncertainty" | "community" | "places" | "movement" | "digital" | "future";
+export type DiscoveryDomain = "rest" | "time" | "values" | "relationships" | "work" | "learning" | "money" | "food" | "culture" | "play" | "creativity" | "childhood" | "uncertainty" | "community" | "places" | "movement" | "digital" | "future" | "home" | "style" | "nature";
 export type DiscoveryResponse =
   | { kind: "choice"; optionId: string }
   | { kind: "scale"; value: number }

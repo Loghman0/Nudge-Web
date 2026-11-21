@@ -1,25 +1,15 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {createHash} from 'node:crypto';
 import {starterEditionTwo} from './lib/discovery-starter-edition-two.mjs';
+import {editionThreeQuestions} from './lib/discovery-edition-three.mjs';
+import {playSessionV3} from './lib/discovery-play-v3.mjs';
+import {choice,scale,text,rank,signal,criterion,priorityChoice,legacyUuid} from './lib/discovery-question-kit.mjs';
 
 const root=new URL('../',import.meta.url);
-const labels=(...values)=>values.map((label,index)=>({id:String.fromCharCode(97+index),label}));
-const choice=(id,domain,subdomain,prompt,values,extra={})=>({id,version:1,familyId:id,domain,subdomain,prompt,format:'choice',choices:labels(...values),purpose:'evidence',depth:0,sensitivity:'ordinary',estimatedSeconds:12,status:'published',source:'starter',allowedResponses:['depends','neither','skip'],review:{type:'authored_seed',version:1},...extra});
-const scale=(id,domain,subdomain,prompt,minLabel,maxLabel,extra={})=>({...choice(id,domain,subdomain,prompt,[],extra),format:'scale',choices:undefined,scale:{min:1,max:5,step:1,minLabel,maxLabel},estimatedSeconds:15});
-const text=(id,domain,subdomain,prompt,extra={})=>({...choice(id,domain,subdomain,prompt,[],extra),format:'text',choices:undefined,estimatedSeconds:30});
-const rank=(id,domain,subdomain,prompt,values,extra={})=>({...choice(id,domain,subdomain,prompt,values,extra),format:'ranking',ranking:{min:1,max:Math.min(2,values.length),allowTies:true},estimatedSeconds:25});
-const signal=(optionId,attributeKey,value,statement,scope,criterion)=>({optionId,attributeKey,value,statement,scope,kind:'preference',strength:'direct',...(criterion?{criterion}: {})});
-const criterion=(label,...decisionDomains)=>({label,decisionDomains});
-
-function priorityChoice(id,domain,subdomain,prompt,scope,options,decisionDomains=[domain]){
- return choice(id,domain,subdomain,prompt,options.map(([label])=>label),{
-  signals:options.map(([,key,priority],index)=>signal(
-   String.fromCharCode(97+index),`${domain}.${subdomain}.priority`,key,
-   `You picked ${priority.toLowerCase()} ${scope}.`,scope,criterion(priority,...decisionDomains)
-  )),
- });
-}
+// Owner-approved 2026-11-20 (00023, 00025). A bundle carrying these pools may
+// only be installed on a real device after the hosted database has the rows
+// and Web is deployed; verify with a disposable session first.
+export const appliedMigrations={playSessionV3:true,editionThree:true};
 
 export const decisionPriorityQuestions=[
  priorityChoice('food-weeknight-tradeoff','food','weeknight-meal','You’re making dinner on a busy night. What would make one meal win over another?','for a busy-night dinner',[
@@ -84,7 +74,7 @@ export const starterQuestions=[
  choice('future-experiment','future','experiments','You have an idea for a new hobby. What would you try before making a bigger commitment?',['Borrow the equipment','Join one beginner session','Watch someone do it','Set up a short experiment at home']),
 ];
 const topicDomain={food:'food',movies:'culture',music:'culture',travel:'places',shopping:'money',health:'movement',career:'work',relationships:'relationships',finance:'money',hobbies:'play',home:'places',learning:'learning',digital:'digital',values:'values',time:'time',creativity:'creativity',sustainability:'community',wellbeing:'rest',gaming:'play',outdoors:'places',reading:'culture',making:'creativity',community:'community',sports:'movement'};
-const uuid=(key,prefix)=>{const h=createHash('sha256').update(`${prefix}:${key}`).digest('hex');return `${h.slice(0,8)}-${h.slice(8,12)}-4${h.slice(13,16)}-a${h.slice(17,20)}-${h.slice(20,32)}`;};
+const uuid=legacyUuid;
 export function convertExistingTree(content,{expansion=false}={}) {
  const lines=content.split(/\r?\n/).map(line=>line.trim()).filter(line=>line&&!line.startsWith('#'));
  const questions=[];
@@ -114,18 +104,24 @@ export async function buildInitialCatalog(){
  return catalog;
 }
 export async function buildCatalog(){
- const updates=new Map(starterEditionTwo.map(q=>[q.id,q]));
- const catalog=[...(await buildInitialCatalog()).map(q=>updates.get(q.id)??q),...decisionPriorityQuestions];
+ const editions=[...starterEditionTwo,...(appliedMigrations.playSessionV3?[playSessionV3]:[])];
+ const updates=new Map(editions.map(q=>[q.id,q]));
+ const catalog=[...(await buildInitialCatalog()).map(q=>updates.get(q.id)??q),...decisionPriorityQuestions,...(appliedMigrations.editionThree?editionThreeQuestions:[])];
  if(new Set(catalog.map(q=>q.id)).size!==catalog.length)throw new Error('Discovery catalog has duplicate IDs.');
  return catalog;
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const catalog=await buildCatalog();
- const history=(await buildInitialCatalog()).filter(q=>starterEditionTwo.some(updated=>updated.id===q.id));
- for(const [name,items] of [['discovery-catalog',catalog],['discovery-preview',catalog.filter(q=>q.preview&&q.status==='published')],['discovery-history',history]]){
+ const history=[...(await buildInitialCatalog()).filter(q=>starterEditionTwo.some(updated=>updated.id===q.id)),...(appliedMigrations.playSessionV3?starterEditionTwo.filter(q=>q.id===playSessionV3.id):[])];
+ // The native onboarding pool: every published choice question a signed-out
+ // device may ask and claim (the native quiz renders choices only). It holds
+ // the current edition of the preview questions and their earlier editions,
+ // so each install can be given a different six.
+ const onboarding=[...catalog,...history].filter(q=>q.preview&&q.status==='published'&&q.format==='choice');
+ for(const [name,items] of [['discovery-catalog',catalog],['discovery-preview',catalog.filter(q=>q.preview&&q.status==='published')],['discovery-history',history],['discovery-onboarding',onboarding]]){
   const output=JSON.stringify(items,null,2)+'\n',target=new URL(`data/${name}.json`,root);
   if(process.argv.includes('--check')){if(await readFile(target,'utf8')!==output)throw new Error('Discovery catalog is stale. Run scripts/discovery-build-catalog.mjs.');}
   else await writeFile(target,output);
  }
- console.log(`Discovery catalog and lightweight preview are current: ${catalog.length} items, six starter questions.`);
+ console.log(`Discovery catalog and lightweight preview are current: ${catalog.length} items, ${onboarding.length} claimable onboarding questions.`);
 }

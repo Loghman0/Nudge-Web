@@ -80,10 +80,20 @@ export function createDiscoveryHandler(authenticate:ReturnType<typeof createApiA
      const target=b.notificationQuestion as {questionId?:unknown;questionVersion?:unknown}|null;
      if(!target||typeof target.questionId!=='string'||!integer(target.questionVersion)||target.questionVersion<1)invalid('This notification is unavailable.');
      const exposure=profile.exposures.find(e=>e.daily&&e.questionId===target.questionId&&e.questionVersion===target.questionVersion);
-     const question=exposure?getDiscoveryQuestion(exposure.questionId,exposure.questionVersion):undefined;
-     if(!canOffer(question,profile,'light'))throw new DiscoveryError(404,'not_found','That question is no longer available. Reload for today’s question.');
-     const answered=exposure?.state==='answered'||exposure?.state==='skipped'||profile.answers.some(a=>a.questionId===target.questionId);
-     return json({question,reason:'coverage',generation,answered});
+     const question=exposure?getDiscoveryQuestion(exposure.questionId,exposure.questionVersion):getDiscoveryQuestion(target.questionId,target.questionVersion);
+     if(exposure){
+      if(!canOffer(question,profile,'light'))throw new DiscoveryError(404,'not_found','That question is no longer available. Reload for today’s question.');
+      const answered=exposure.state==='answered'||exposure.state==='skipped'||profile.answers.some(a=>a.questionId===target.questionId);
+      return json({question,reason:'coverage',generation,answered});
+     }
+     // On-device reminders carry the day's question before any exposure exists: reserve it as today's daily.
+     if(canOffer(question,profile,'light')&&!profile.answers.some(a=>a.questionId===target.questionId)){
+      const {data,error}=await client.rpc('reserve_discovery_question',{p_request_id:b.requestId,p_generation:generation,p_question_id:question!.id,p_version:question!.version,p_daily:true,p_change:true,p_reason:'coverage'});
+      checkDiscoveryError(error);
+      const reserved=data as {question_id:string;question_version:number;state:string};
+      return json({question:getDiscoveryQuestion(reserved.question_id,reserved.question_version),reason:'coverage',generation,answered:reserved.state==='answered'||reserved.state==='skipped'});
+     }
+     // Muted or already answered: fall through to today's regular daily selection.
     }
     let replaceDaily=b.change===true;
     if(b.daily===true&&!replaceDaily){const daily=profile.exposures.find(e=>e.daily&&e.localDay===profile.today&&e.state!=='changed');if(daily){

@@ -74,6 +74,12 @@ export function createAccountHandler(deps:AccountDependencies){return async(requ
    const query=client.from('notifications').update({read_at:new Date((deps.now??Date.now)()).toISOString()}).eq('user_id',userId).is('read_at',null);
    check((await(id==='all'?query:query.eq('id',id))).error);return json({saved:true});
   }
+  if(path==='exit-reasons'&&request.method==='POST'){
+   if(b.kind!=='pause'&&b.kind!=='delete')fail(400,'invalid_request','Choose pause or delete.');
+   if(!Array.isArray(b.reasons)||b.reasons.length>10||b.reasons.some(reason=>typeof reason!=='string'||reason.length>220))fail(400,'invalid_request','Check the reasons and try again.');
+   check((await client.from('account_exit_reasons').insert({user_id:userId,kind:b.kind,reasons:b.reasons as string[]})).error);
+   return json({saved:true});
+  }
   if(path==='delete'&&request.method==='DELETE'){
    if(b.confirmation!=='DELETE')fail(400,'invalid_request','Type DELETE to confirm.');
    const token=request.headers.get('authorization')?.match(/^Bearer ([^\s,]+)$/i)?.[1];

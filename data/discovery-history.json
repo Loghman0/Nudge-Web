@@ -419,5 +419,99 @@
         "strength": "direct"
       }
     ]
+  },
+  {
+    "id": "play-humor",
+    "version": 2,
+    "familyId": "play-humor",
+    "domain": "play",
+    "subdomain": "humor",
+    "prompt": "Think of something that made you laugh recently. What was it closest to?",
+    "format": "choice",
+    "choices": [
+      {
+        "id": "a",
+        "label": "Something ridiculously unexpected."
+      },
+      {
+        "id": "b",
+        "label": "A sharp or sarcastic comment."
+      },
+      {
+        "id": "c",
+        "label": "Someone laughing at their own mistake."
+      },
+      {
+        "id": "d",
+        "label": "A small everyday thing we all recognize."
+      },
+      {
+        "id": "e",
+        "label": "An inside joke that wouldn't make sense to anyone else."
+      }
+    ],
+    "purpose": "evidence",
+    "depth": 0,
+    "sensitivity": "ordinary",
+    "estimatedSeconds": 20,
+    "status": "published",
+    "source": "starter",
+    "preview": true,
+    "allowedResponses": [
+      "depends",
+      "neither",
+      "skip"
+    ],
+    "review": {
+      "type": "authored_seed",
+      "version": 2
+    },
+    "signals": [
+      {
+        "optionId": "a",
+        "attributeKey": "play.recent_humor",
+        "value": "absurd",
+        "statement": "You recalled laughing at something ridiculously unexpected.",
+        "scope": "something that made you laugh recently",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "b",
+        "attributeKey": "play.recent_humor",
+        "value": "sarcastic",
+        "statement": "You recalled laughing at a sharp or sarcastic comment.",
+        "scope": "something that made you laugh recently",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "c",
+        "attributeKey": "play.recent_humor",
+        "value": "own_mistake",
+        "statement": "You recalled laughing with someone about their own mistake.",
+        "scope": "something that made you laugh recently",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "d",
+        "attributeKey": "play.recent_humor",
+        "value": "everyday",
+        "statement": "You recalled laughing at a recognizable everyday moment.",
+        "scope": "something that made you laugh recently",
+        "kind": "preference",
+        "strength": "direct"
+      },
+      {
+        "optionId": "e",
+        "attributeKey": "play.recent_humor",
+        "value": "inside_joke",
+        "statement": "You recalled an inside joke that depended on shared context.",
+        "scope": "something that made you laugh recently",
+        "kind": "preference",
+        "strength": "direct"
+      }
+    ]
   }
 ]
