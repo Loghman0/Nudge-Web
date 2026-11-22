@@ -2,12 +2,12 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {PREVIEW_QUESTIONS,getDiscoveryQuestion,parseDiscoveryAnswers,deriveDiscoveryObservations} from '../src/lib/discovery';
 import {parseGuestDraft} from '../src/lib/discovery/guest-draft';
-import {previewQuestionsForEdition} from '../src/lib/discovery/preview-catalog';
+import {previewQuestionsForEdition,PREVIEW_EDITION} from '../src/lib/discovery/preview-catalog';
 
 test('Every revised starter answer has a literal, contextual reflection without personality verdicts',()=>{
  assert.equal(PREVIEW_QUESTIONS.length,6);
  for(const q of PREVIEW_QUESTIONS){
-  assert.equal(q.version,2);assert.equal(q.choices?.length,5);
+  assert.ok(q.version===2||q.version===3);assert.equal(q.choices?.length,5);
   for(const choice of q.choices!){
    assert.ok(choice.label.length<=90);
    const [o,...others]=deriveDiscoveryObservations([{questionId:q.id,questionVersion:q.version,response:{kind:'choice',optionId:choice.id}}]);
@@ -31,5 +31,5 @@ test('Prior question definitions and drafts keep their meaning through the editi
  const draft={version:1,createdAt:Date.now(),requestId:'00000000-0000-4000-8000-000000000001',answers:[{questionId:first.id,questionVersion:1,response:{kind:'choice',optionId:'a'}}]};
  assert.equal(parseGuestDraft(JSON.stringify(draft))?.questionEdition,1);
  assert.equal(parseGuestDraft(JSON.stringify({...draft,questionEdition:2})),null,'An old answer cannot be relabeled as a new edition');
- assert.equal(parseGuestDraft(JSON.stringify({...draft,answers:[]}))?.questionEdition,2);
+ assert.equal(parseGuestDraft(JSON.stringify({...draft,answers:[]}))?.questionEdition,PREVIEW_EDITION);
 });

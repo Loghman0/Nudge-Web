@@ -118,7 +118,11 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
  // the current edition of the preview questions and their earlier editions,
  // so each install can be given a different six.
  const onboarding=[...catalog,...history].filter(q=>q.preview&&q.status==='published'&&q.format==='choice');
- for(const [name,items] of [['discovery-catalog',catalog],['discovery-preview',catalog.filter(q=>q.preview&&q.status==='published')],['discovery-history',history],['discovery-onboarding',onboarding]]){
+ // The web guest quiz stays the six starter families: edition numbers are
+ // global there, so first editions of new families must not join edition 1.
+ const previewFamilies=new Set(starterEditionTwo.map(q=>q.id));
+ const preview=catalog.filter(q=>q.preview&&q.status==='published'&&previewFamilies.has(q.id));
+ for(const [name,items] of [['discovery-catalog',catalog],['discovery-preview',preview],['discovery-history',history],['discovery-onboarding',onboarding]]){
   const output=JSON.stringify(items,null,2)+'\n',target=new URL(`data/${name}.json`,root);
   if(process.argv.includes('--check')){if(await readFile(target,'utf8')!==output)throw new Error('Discovery catalog is stale. Run scripts/discovery-build-catalog.mjs.');}
   else await writeFile(target,output);

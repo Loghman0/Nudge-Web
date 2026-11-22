@@ -6,8 +6,8 @@ import {suggestDecisionCriteria} from '../src/lib/services/decision-personalizat
 import {createDiscoveryHandler} from '../src/lib/api/v1/discovery-route';
 import type {DiscoveryAnswer} from '../src/lib/discovery/types';
 const answer=(id=PREVIEW_QUESTIONS[0].id):DiscoveryAnswer=>({id:'answer-'+id,questionId:id,questionVersion:1,response:{kind:'choice',optionId:'a'},answeredAt:'2026-10-29T10:00:00Z'});
-test('Discovery catalog covers 18 domains, six preview items and four response formats',()=>{
- assert.equal(DISCOVERY_CATALOG.length,208);assert.equal(PREVIEW_QUESTIONS.length,6);assert.equal(new Set(DISCOVERY_CATALOG.map(q=>q.id)).size,DISCOVERY_CATALOG.length);
+test('Discovery catalog covers 21 domains, six preview items and four response formats',()=>{
+ assert.equal(DISCOVERY_CATALOG.length,253);assert.equal(PREVIEW_QUESTIONS.length,6);assert.equal(new Set(DISCOVERY_CATALOG.map(q=>q.id)).size,DISCOVERY_CATALOG.length);
  assert.deepEqual(new Set(DISCOVERY_CATALOG.map(q=>q.domain)),new Set(DISCOVERY_DOMAINS.map(d=>d.id)));
  assert.deepEqual(new Set(DISCOVERY_CATALOG.map(q=>q.format)),new Set(['choice','scale','ranking','text']));
  for(const q of DISCOVERY_CATALOG){assert.ok(q.review);assert.ok(q.allowedResponses.includes('skip'));assert.ok(q.prompt.length<280);assert.equal(q.status,'published');}
